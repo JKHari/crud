@@ -236,9 +236,11 @@ export default {
         body: this.employee,
       }).then((response) => {
         if (response.success) {
-          this.datas.push(this.employee);
+          this.datas.push(response.datas);
           this.createModal = false;
           this.employee = {};
+
+          console.log(response)
           return;
         }
       });

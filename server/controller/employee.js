@@ -13,9 +13,14 @@ export const createEmployee = (req, res) => {
 
     datas.id = result.insertId;
 
+    const user  = {
+      ...datas,
+      id: result.insertId
+    }
+
     return res.json({
       success: true,
-      datas: result,
+      datas: user,
     });
   });
 };
